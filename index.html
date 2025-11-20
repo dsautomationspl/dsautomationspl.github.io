@@ -110,19 +110,17 @@
 </head>
 <body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav">
+    <!-- Navigation --><nav class="fixed w-full z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2">
-                    <div class="w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-accent rounded-lg flex items-center justify-center text-white font-bold">DS</div>
+                    <!-- Logo: DS in blue, Automations in white -->
                     <a href="#" class="text-xl font-bold text-white tracking-tight font-display">
-                        DS Automations
+                        <span class="text-brand-primary">DS</span> Automations
                     </a>
                 </div>
                 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
+                <!-- Desktop Menu --><div class="hidden md:flex space-x-8 items-center">
                     <a href="#problems" class="hover:text-white transition-colors text-sm font-medium">Solutions</a>
                     <a href="#cases" class="hover:text-white transition-colors text-sm font-medium">Case Studies</a>
                     <a href="#process" class="hover:text-white transition-colors text-sm font-medium">Process</a>
@@ -133,16 +131,14 @@
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
+                <!-- Mobile Menu Button --><div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-slate-300 hover:text-white p-2">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-slate-800 absolute w-full">
+        <!-- Mobile Menu Dropdown --><div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-slate-800 absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#problems" class="block px-3 py-3 text-base font-medium hover:bg-slate-800 rounded-lg text-white">Solutions</a>
                 <a href="#cases" class="block px-3 py-3 text-base font-medium hover:bg-slate-800 rounded-lg text-white">Case Studies</a>
@@ -152,10 +148,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Background Blobs -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl -z-10 pointer-events-none">
+    <!-- Hero Section --><section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Blobs --><div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl -z-10 pointer-events-none">
             <div class="absolute top-20 left-10 w-72 h-72 bg-brand-primary/20 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
             <div class="absolute top-20 right-10 w-72 h-72 bg-brand-accent/20 rounded-full mix-blend-screen filter blur-3xl animate-blob" style="animation-delay: 2s"></div>
             <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-brand-success/10 rounded-full mix-blend-screen filter blur-3xl animate-blob" style="animation-delay: 4s"></div>
@@ -171,12 +165,13 @@
             </div>
             
             <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8 leading-[1.1] font-display">
-                Your Business runs on autopilot.<br>
-                <span class="gradient-text">You just need to build the engine.</span>
+                Automate the Boring.<br>
+                <!-- UPDATED SLOGAN -->
+                <span class="gradient-text">Maximize the Focus.</span>
             </h1>
             
             <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400 mb-10 leading-relaxed">
-                We replace manual data entry, messy spreadsheets, and chaos with custom <strong>Automations</strong> and internal <strong>Apps</strong>.
+                We replace manual data entry, messy spreadsheets, and chaos with custom <strong>Automations (Make/Zapier)</strong> and internal <strong>Apps</strong>.
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -189,13 +184,11 @@
                 </a>
             </div>
 
-            <!-- Tech Stack Marquee -->
-            <div class="mt-20 relative max-w-5xl mx-auto overflow-hidden mask-image-linear-gradient">
+            <!-- Tech Stack Marquee --><div class="mt-20 relative max-w-5xl mx-auto overflow-hidden mask-image-linear-gradient">
                 <p class="text-center text-sm font-semibold text-slate-500 uppercase tracking-wider mb-6">We connect the tools you already use</p>
                 <div class="flex overflow-hidden space-x-16 group">
                     <div class="flex space-x-16 animate-marquee whitespace-nowrap">
-                        <!-- Icons Set 1 -->
-                        <div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-bolt text-xl"></i> <span class="font-bold">Zapier</span></div>
+                        <!-- Icons Set 1 --><div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-bolt text-xl"></i> <span class="font-bold">Zapier</span></div>
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-infinity text-xl"></i> <span class="font-bold">Make</span></div>
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-network-wired text-xl"></i> <span class="font-bold">n8n</span></div>
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-brands fa-google text-xl"></i> <span class="font-bold">Sheets</span></div>
@@ -205,8 +198,7 @@
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-brands fa-hubspot text-xl"></i> <span class="font-bold">HubSpot</span></div>
                     </div>
                     <div class="flex space-x-16 animate-marquee whitespace-nowrap" aria-hidden="true">
-                         <!-- Icons Set 2 (Duplicate for infinite loop) -->
-                        <div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-bolt text-xl"></i> <span class="font-bold">Zapier</span></div>
+                         <!-- Icons Set 2 (Duplicate for infinite loop) --><div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-bolt text-xl"></i> <span class="font-bold">Zapier</span></div>
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-infinity text-xl"></i> <span class="font-bold">Make</span></div>
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-network-wired text-xl"></i> <span class="font-bold">n8n</span></div>
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-brands fa-google text-xl"></i> <span class="font-bold">Sheets</span></div>
@@ -216,15 +208,13 @@
                         <div class="flex items-center gap-2 text-slate-400"><i class="fa-brands fa-hubspot text-xl"></i> <span class="font-bold">HubSpot</span></div>
                     </div>
                 </div>
-                <!-- Fade edges for marquee -->
-                <div class="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-brand-dark to-transparent z-10"></div>
+                <!-- Fade edges for marquee --><div class="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-brand-dark to-transparent z-10"></div>
                 <div class="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-brand-dark to-transparent z-10"></div>
             </div>
         </div>
     </section>
 
-    <!-- Pain Points Section -->
-    <section id="problems" class="py-24 border-y border-slate-800/50 bg-slate-900/30">
+    <!-- Pain Points Section --><section id="problems" class="py-24 border-y border-slate-800/50 bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-white mb-4 font-display">Does this sound like your Monday morning?</h2>
@@ -250,8 +240,7 @@
         </div>
     </section>
 
-    <!-- Modern Bento Grid Services -->
-    <section id="services" class="py-24">
+    <!-- Modern Bento Grid Services --><section id="services" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
                 <span class="text-brand-primary font-bold tracking-wider uppercase text-sm">Our Expertise</span>
@@ -260,8 +249,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[minmax(200px,auto)]">
                 
-                <!-- Large Card: Workflow Automation -->
-                <div class="glass-card p-8 rounded-3xl md:col-span-2 lg:row-span-2 relative overflow-hidden group">
+                <!-- Large Card: Workflow Automation --><div class="glass-card p-8 rounded-3xl md:col-span-2 lg:row-span-2 relative overflow-hidden group">
                     <div class="absolute right-0 top-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-brand-primary/20"></div>
                     <div class="relative z-10 h-full flex flex-col justify-between">
                         <div>
@@ -269,19 +257,22 @@
                                 <i class="fa-solid fa-diagram-project text-2xl text-brand-primary"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-white mb-3">Workflow Engineering</h3>
-                            <p class="text-slate-400 leading-relaxed">We map your entire business logic and rebuild it using Make.com or Zapier. From simple notifications to complex multi-stage approval processes.</p>
+                            <p class="text-slate-400 leading-relaxed">
+                                We map your entire business logic, identify failure points, and rebuild it using Make.com, Zapier, or n8n. This includes everything from simple cross-app notifications to complex multi-stage systems: 
+                                <strong class="text-white">conditional routing, automated data transformation, error handling, and multi-user approval processes.</strong> We ensure data integrity and system reliability, eliminating costly manual checks.
+                            </p>
                         </div>
                         <div class="mt-8">
                             <div class="flex gap-2">
                                 <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Advanced Logic</span>
                                 <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Error Handling</span>
+                                <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-700">Audit Trails</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card: Mobile Apps -->
-                <div class="glass-card p-8 rounded-3xl md:col-span-1 lg:col-span-2">
+                <!-- Card: Mobile Apps --><div class="glass-card p-8 rounded-3xl md:col-span-1 lg:col-span-2">
                     <div class="flex items-start justify-between">
                         <div>
                             <h3 class="text-xl font-bold text-white mb-2">Custom Internal Apps</h3>
@@ -297,8 +288,7 @@
                     </div>
                 </div>
 
-                <!-- Card: API Integration -->
-                <div class="glass-card p-8 rounded-3xl md:col-span-1">
+                <!-- Card: API Integration --><div class="glass-card p-8 rounded-3xl md:col-span-1">
                     <div class="h-full flex flex-col justify-between">
                         <i class="fa-solid fa-code text-2xl text-brand-accent mb-4"></i>
                         <div>
@@ -308,8 +298,7 @@
                     </div>
                 </div>
 
-                <!-- Card: AI Agents -->
-                <div class="glass-card p-8 rounded-3xl md:col-span-1 bg-gradient-to-br from-slate-900 to-brand-primary/20 border-brand-primary/30">
+                <!-- Card: AI Agents --><div class="glass-card p-8 rounded-3xl md:col-span-1 bg-gradient-to-br from-slate-900 to-brand-primary/20 border-brand-primary/30">
                     <div class="h-full flex flex-col justify-between">
                         <i class="fa-solid fa-wand-magic-sparkles text-2xl text-white mb-4"></i>
                         <div>
@@ -323,33 +312,31 @@
         </div>
     </section>
 
-    <!-- Real Use Cases -->
-    <section id="cases" class="py-24 bg-slate-900/50 border-t border-slate-800">
+    <!-- Real Use Cases --><section id="cases" class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div>
                     <h2 class="text-3xl font-bold text-white mb-4 font-display">Recent Wins</h2>
-                    <p class="text-slate-400">Real problems we solved for real companies.</p>
+                    <p class="text-slate-400">Complex, multi-step problems we solved for high-efficiency teams.</p>
                 </div>
-                <!-- <a href="#" class="text-brand-primary font-bold hover:text-white transition-colors mt-4 md:mt-0">View all case studies <i class="fa-solid fa-arrow-right ml-2"></i></a> -->
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Case 1 -->
-                <div class="glass-card rounded-2xl overflow-hidden group hover:border-brand-primary/50 transition-colors">
+                
+                <!-- Case 1: Real Estate Lead Router --><div class="glass-card rounded-2xl overflow-hidden group hover:border-brand-primary/50 transition-colors">
                     <div class="h-48 bg-slate-800 relative overflow-hidden">
-                        <!-- Abstract UI representation -->
-                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
-                            <div class="w-3/4 p-4 bg-white/5 rounded border border-white/10 backdrop-blur-sm transform group-hover:scale-105 transition-transform duration-500">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
-                                    <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                                </div>
-                                <div class="space-y-2">
-                                    <div class="h-2 bg-slate-700 rounded w-3/4"></div>
-                                    <div class="h-2 bg-slate-700 rounded w-1/2"></div>
-                                </div>
+                        <!-- UPDATED WORKFLOW VISUALIZATION: Facebook -> Make (Trigger) -> Make (Validate) -> HubSpot -> Slack -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 p-4">
+                            <div class="flex items-center space-x-3 text-white/50 text-xs">
+                                <i class="fa-brands fa-facebook text-4xl text-blue-600/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-bolt text-4xl text-yellow-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-circle-check text-4xl text-brand-success/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-brands fa-hubspot text-4xl text-orange-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-brands fa-slack text-4xl text-red-400/80"></i>
                             </div>
                         </div>
                     </div>
@@ -357,8 +344,8 @@
                         <div class="flex items-center gap-2 text-brand-success text-xs font-bold uppercase tracking-wide mb-3">
                             <i class="fa-solid fa-check-circle"></i> Saved 15h/Week
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Real Estate Lead Router</h3>
-                        <p class="text-slate-400 mb-6">Built a Make.com scenario that instantly scrapes leads from Facebook Ads, validates the phone number, adds them to HubSpot, and notifies the sales agent via Slack within 30 seconds.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Real Estate Lead Router (30-Sec SLA)</h3>
+                        <p class="text-slate-400 mb-6">Built a Make.com scenario that instantly scrapes leads from Facebook Ads, validates the phone number, adds them to HubSpot, and notifies the sales agent via Slack within 30 seconds, ensuring zero cold leads.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Make</span>
                             <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">HubSpot</span>
@@ -367,19 +354,29 @@
                     </div>
                 </div>
 
-                <!-- Case 2 -->
-                <div class="glass-card rounded-2xl overflow-hidden group hover:border-brand-primary/50 transition-colors">
+                <!-- Case 2: Construction Field App --><div class="glass-card rounded-2xl overflow-hidden group hover:border-brand-primary/50 transition-colors">
                     <div class="h-48 bg-slate-800 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
-                            <i class="fa-solid fa-mobile-screen-button text-6xl text-slate-700 group-hover:text-brand-primary transition-colors duration-500"></i>
+                        <!-- UPDATED WORKFLOW VISUALIZATION: Mobile -> Sheets -> Zapier (Trigger) -> PDF Generator -> Email -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 p-4">
+                            <div class="flex items-center space-x-3 text-white/50 text-xs">
+                                <i class="fa-solid fa-mobile-screen-button text-4xl text-white/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-brands fa-google text-4xl text-green-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-bolt text-4xl text-yellow-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-file-pdf text-4xl text-red-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-envelope text-4xl text-blue-400/80"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="p-8">
                         <div class="flex items-center gap-2 text-brand-success text-xs font-bold uppercase tracking-wide mb-3">
                             <i class="fa-solid fa-check-circle"></i> Removed Paper Forms
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Construction Field App</h3>
-                        <p class="text-slate-400 mb-6">Created a Glide app for site managers to upload photos and daily reports. Automatically generates a PDF report and emails it to the client at 5 PM daily.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Construction Field App & Auto-Reporting</h3>
+                        <p class="text-slate-400 mb-6">Created a Glide app for site managers to upload daily logs and photos. Data is instantly synced, and a Zapier automation generates a branded, structured PDF report that is emailed to the client at a fixed time daily.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Glide</span>
                             <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Google Sheets</span>
@@ -387,12 +384,78 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Case 3: Automated Fraud/Chargeback Manager --><div class="glass-card rounded-2xl overflow-hidden group hover:border-brand-primary/50 transition-colors">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <!-- UPDATED WORKFLOW VISUALIZATION: Stripe -> Make (Webhook) -> Make (Score) -> Hold -> Intercom Ticket -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 p-4">
+                            <div class="flex items-center space-x-3 text-white/50 text-xs">
+                                <i class="fa-brands fa-cc-stripe text-4xl text-purple-400/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-bolt text-4xl text-yellow-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-shield-halved text-4xl text-brand-accent/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-lock text-4xl text-red-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-ticket text-4xl text-cyan-400/80"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-brand-success text-xs font-bold uppercase tracking-wide mb-3">
+                            <i class="fa-solid fa-check-circle"></i> Reduced Fraud by 8%
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Fraud & Chargeback Triage System</h3>
+                        <p class="text-slate-400 mb-6">A high-velocity Make.com flow that scores all new Stripe payments. If the fraud score exceeds a threshold, it automatically holds the refund, creates a priority ticket in Intercom, and generates a data summary for the finance team review.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Make</span>
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Stripe</span>
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Intercom</span>
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Custom Script</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 4: AI-Powered Content Distribution --><div class="glass-card rounded-2xl overflow-hidden group hover:border-brand-primary/50 transition-colors">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <!-- UPDATED WORKFLOW VISUALIZATION: RSS -> Zapier -> OpenAI -> Airtable -> Zapier (Schedule) -> Buffer -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 p-4">
+                            <div class="flex items-center space-x-3 text-white/50 text-xs">
+                                <i class="fa-solid fa-rss text-4xl text-orange-400/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-bolt text-4xl text-yellow-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-brain text-4xl text-brand-accent/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-database text-4xl text-cyan-400/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-solid fa-calendar-check text-4xl text-green-500/80"></i>
+                                <i class="fa-solid fa-arrow-right text-brand-primary/80"></i>
+                                <i class="fa-brands fa-buffer text-4xl text-orange-400/80"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-brand-success text-xs font-bold uppercase tracking-wide mb-3">
+                            <i class="fa-solid fa-check-circle"></i> 400% Content Output
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">AI-Drafted Social Posts w/ Approval Gate</h3>
+                        <p class="text-slate-400 mb-6">Uses Zapier to monitor industry news feeds. It sends the article text to OpenAI to draft 3 social posts, routes them to an Airtable approval queue, and auto-schedules the approved content via Buffer for multi-platform distribution.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Zapier</span>
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">OpenAI</span>
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Airtable</span>
+                            <span class="text-xs font-mono text-slate-500 border border-slate-800 px-2 py-1 rounded">Buffer</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section id="process" class="py-24">
+    <!-- Process Section --><section id="process" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -428,12 +491,10 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <!-- Abstract Process Graphic -->
-                    <div class="glass-card p-8 rounded-2xl border border-slate-700 relative z-10">
+                    <!-- Abstract Process Graphic --><div class="glass-card p-8 rounded-2xl border border-slate-700 relative z-10">
                          <h5 class="text-xs font-bold text-slate-500 uppercase mb-4">Live Scenario Status</h5>
                         <div class="space-y-4">
-                            <!-- Mock Automation Flow -->
-                            <div class="flex items-center justify-between p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                            <!-- Mock Automation Flow --><div class="flex items-center justify-between p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
                                 <div class="flex items-center gap-3">
                                     <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center"><i class="fa-solid fa-envelope text-white text-xs"></i></div>
                                     <span class="text-sm font-medium text-white">Trigger: New Email</span>
@@ -448,171 +509,131 @@
                             <div class="flex items-center justify-between p-4 bg-slate-800/50 rounded-lg border border-slate-700/50 relative overflow-hidden">
                                 <div class="absolute top-0 left-0 h-full w-1 bg-brand-accent"></div>
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center"><i class="fa-solid fa-robot text-white text-xs"></i></div>
-                                    <span class="text-sm font-medium text-white">Action: AI Extract Data</span>
+                                    <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center"><i class="fa-solid fa-database text-white text-xs"></i></div>
+                                    <span class="text-sm font-medium text-white">Action: Insert Record (Airtable)</span>
                                 </div>
-                                <i class="fa-solid fa-gear text-slate-500 fa-spin-pulse"></i>
+                                <span class="text-xs text-yellow-500 font-mono">Pending</span>
                             </div>
-                        </div>
-                        <div class="mt-6 pt-6 border-t border-slate-800">
-                            <div class="flex justify-between text-xs text-slate-400">
-                                <span>Execution Time: 0.4s</span>
-                                <span>Credits Used: 1</span>
+
+                            <div class="flex justify-center">
+                                <i class="fa-solid fa-arrow-down text-slate-600"></i>
                             </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-green-500/20 rounded flex items-center justify-center"><i class="fa-brands fa-slack text-green-500 text-xs"></i></div>
+                                    <span class="text-sm font-medium text-slate-500">Action: Send Slack Alert</span>
+                                </div>
+                                <span class="text-xs text-slate-600 font-mono">Waiting</span>
+                            </div>
+
                         </div>
                     </div>
-                    <!-- Background glow -->
-                    <div class="absolute -inset-4 bg-brand-primary/10 blur-3xl -z-10 rounded-full"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-slate-900/30 border-t border-slate-800">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white text-center mb-12 font-display">Common Questions</h2>
+    <!-- FAQ Section --><section id="faq" class="py-24 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-primary font-bold tracking-wider uppercase text-sm">Have Questions?</span>
+                <h2 class="text-4xl font-bold text-white mt-2 font-display">Frequently Asked Questions</h2>
+            </div>
             
             <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="p-6 flex justify-between items-center">
-                        <h3 class="text-white font-semibold">Do I need to pay a monthly subscription for your services?</h3>
-                        <i class="fa-solid fa-chevron-down text-brand-primary faq-icon"></i>
-                    </div>
-                    <div class="faq-content px-6">
-                        <p class="text-slate-400 pb-6">No. We typically charge a one-time project fee for building the automation. However, you will need to pay for your own software subscriptions (e.g., Zapier ($20/mo) or Make ($9/mo)). We will help you choose the most cost-effective plan.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="p-6 flex justify-between items-center">
-                        <h3 class="text-white font-semibold">What happens if the automation breaks?</h3>
-                        <i class="fa-solid fa-chevron-down text-brand-primary faq-icon"></i>
-                    </div>
-                    <div class="faq-content px-6">
-                        <p class="text-slate-400 pb-6">We include a 30-day support period with every project to fix any bugs for free. After that, we offer optional maintenance packages, or we can train you on how to fix simple issues yourself.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="faq-item glass-card rounded-xl overflow-hidden cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="p-6 flex justify-between items-center">
-                        <h3 class="text-white font-semibold">Is my data secure?</h3>
-                        <i class="fa-solid fa-chevron-down text-brand-primary faq-icon"></i>
-                    </div>
-                    <div class="faq-content px-6">
-                        <p class="text-slate-400 pb-6">Yes. We build the automations inside *your* accounts. We never hold your data on our servers. Once the project is done, you can revoke our access and the system keeps running.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark to-brand-primary/10 -z-10"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-card p-8 md:p-12 rounded-3xl border border-slate-700 shadow-2xl relative overflow-hidden">
                 
-                <!-- Decorative Grid -->
-                <div class="absolute top-0 right-0 p-4 opacity-5">
-                    <i class="fa-solid fa-fingerprint text-9xl text-white"></i>
-                </div>
-
-                <div class="grid md:grid-cols-5 gap-12">
-                    <!-- Text Side -->
-                    <div class="md:col-span-2 flex flex-col justify-between">
-                        <div>
-                            <h2 class="text-3xl font-bold text-white mb-4 font-display">Let's build something efficient.</h2>
-                            <p class="text-slate-400 mb-8">Fill out the form or book a call directly. No sales pressure, just engineering solutions.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3 text-slate-300">
-                                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center"><i class="fa-solid fa-envelope text-brand-primary"></i></div>
-                                <span>damian@dsautomations.com</span>
-                            </div>
-                            <!-- Optional: Add if you have a number -->
-                            <!-- <div class="flex items-center gap-3 text-slate-300">
-                                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center"><i class="fa-solid fa-phone text-brand-primary"></i></div>
-                                <span>+48 123 456 789</span>
-                            </div> -->
-                        </div>
-                    </div>
-
-                    <!-- Form Side -->
-                    <div class="md:col-span-3">
-                        <form class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Name</label>
-                                    <input type="text" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all outline-none">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Company</label>
-                                    <input type="text" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all outline-none">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Email</label>
-                                <input type="email" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Project Type</label>
-                                <select class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all outline-none appearance-none">
-                                    <option>I want to automate a workflow</option>
-                                    <option>I need a mobile app (Internal)</option>
-                                    <option>Consulting / Audit</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Details</label>
-                                <textarea rows="3" class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all outline-none"></textarea>
-                            </div>
-                            <button type="button" onclick="alert('Thank you! We will contact you shortly.')" class="w-full bg-brand-primary hover:bg-blue-600 text-white font-bold py-4 rounded-lg transition-all transform hover:scale-[1.01] shadow-lg flex items-center justify-center gap-2">
-                                Send Request <i class="fa-solid fa-paper-plane text-xs"></i>
-                            </button>
-                        </form>
+                <!-- FAQ Item 1: Ownership --><div class="faq-item glass-card rounded-xl">
+                    <button class="w-full text-left p-6 flex justify-between items-center text-white font-semibold" onclick="toggleFaq(this.closest('.faq-item'))">
+                        <span>Who owns the Intellectual Property (IP) of the workflows?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-primary"></i>
+                    </button>
+                    <div class="faq-content p-6 pt-0">
+                        <p class="text-slate-400 text-sm">You do, 100%. We build the automations directly within your existing accounts (Make, Zapier, n8n, etc.). You retain all control, ownership, and access to the blueprints and the data flow.</p>
                     </div>
                 </div>
+
+                <!-- FAQ Item 2: Cost --><div class="faq-item glass-card rounded-xl">
+                    <button class="w-full text-left p-6 flex justify-between items-center text-white font-semibold" onclick="toggleFaq(this.closest('.faq-item'))">
+                        <span>How much does an automation project cost?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-primary"></i>
+                    </button>
+                    <div class="faq-content p-6 pt-0">
+                        <p class="text-slate-400 text-sm">We use fixed pricing based on complexity, provided after the initial discovery session. Simple automations often start at $500, while complex, multi-stage systems requiring multiple apps and custom logic typically range from $2,000 to $5,000.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3: Support/Maintenance --><div class="faq-item glass-card rounded-xl">
+                    <button class="w-full text-left p-6 flex justify-between items-center text-white font-semibold" onclick="toggleFaq(this.closest('.faq-item'))">
+                        <span>What if the automation breaks after it's delivered?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-primary"></i>
+                    </button>
+                    <div class="faq-content p-6 pt-0">
+                        <p class="text-slate-400 text-sm">Every project includes a 30-day bug fix warranty to cover any unexpected technical issues. For long-term reliability, we offer optional quarterly maintenance plans that include monitoring, handling platform API changes, and proactive fixes.</p>
+                    </div>
+                </div>
+                
+                 <!-- FAQ Item 4: Timeline --><div class="faq-item glass-card rounded-xl">
+                    <button class="w-full text-left p-6 flex justify-between items-center text-white font-semibold" onclick="toggleFaq(this.closest('.faq-item'))">
+                        <span>How quickly can you implement a new workflow?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-brand-primary"></i>
+                    </button>
+                    <div class="faq-content p-6 pt-0">
+                        <p class="text-slate-400 text-sm">Most standard projects are completed, thoroughly tested, and handed over within 1 to 3 weeks of finalizing the Visual Blueprint. We prioritize speed and accuracy thanks to our low-code approach.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact/CTA Section --><section id="contact" class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-slate-900/50 rounded-3xl p-10 lg:p-16 border border-slate-700/50 shadow-xl">
+                <h2 class="text-4xl font-bold text-white mb-4 font-display">Ready to Maximize Your Focus?</h2>
+                <p class="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
+                    Stop wasting time on repetitive tasks. Book a free 30-minute discovery call to map your first automation.
+                </p>
+                <a href="#" class="bg-brand-primary text-white hover:bg-blue-600 px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg shadow-brand-primary/30">
+                    Schedule Your Free Call Today
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Expanded Footer -->
-    <footer class="bg-black py-12 border-t border-slate-900 text-slate-400 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="text-2xl font-bold text-white mb-4 font-display">
+    <!-- Footer --><footer class="bg-brand-dark py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-400 text-sm">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="text-xl font-bold text-white tracking-tight font-display mb-4">
                         <span class="text-brand-primary">DS</span> Automations
                     </div>
-                    <p class="max-w-xs mb-6">Helping forward-thinking companies escape the manual work trap. Warsaw based, serving clients globally.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                    <p>Building the operational backend for high-growth businesses.</p>
+                    <div class="flex gap-4 mt-4 text-white text-lg">
+                        <i class="fa-brands fa-linkedin hover:text-brand-primary cursor-pointer transition-colors"></i>
+                        <i class="fa-brands fa-twitter hover:text-brand-primary cursor-pointer transition-colors"></i>
                     </div>
                 </div>
-                
                 <div>
-                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <h5 class="font-bold text-white mb-3 uppercase tracking-wider">Company</h5>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white transition-colors">Workflow Automation</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Internal Apps</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">CRM Integration</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Consulting</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#cases" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#process" class="hover:text-white transition-colors">Our Process</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <h5 class="font-bold text-white mb-3 uppercase tracking-wider">Resources</h5>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Process</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog (Coming Soon)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white mb-3 uppercase tracking-wider">Legal</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
                     </ul>
                 </div>
@@ -656,5 +677,4 @@
         }
     </script>
 </body>
-
 </html>
