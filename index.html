@@ -106,6 +106,32 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        /* Custom Styles for Chatbot */
+        #chat-container {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(0.8) translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+            transform-origin: bottom right;
+        }
+        #chat-container.open {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+        .chat-message-ai {
+            background-color: #1f2937; /* slate-800 */
+            border-radius: 12px 12px 12px 4px;
+        }
+        .chat-message-user {
+            background-color: #3b82f6; /* brand-primary */
+            border-radius: 12px 12px 4px 12px;
+        }
+        #chat-messages {
+            max-height: 400px; /* Limit height for mobile/desktop */
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-300 font-sans antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden">
@@ -646,8 +672,56 @@
             </div>
         </div>
     </footer>
+    
+    <!-- AI Chatbot UI -->
+    <div id="chat-container" class="fixed bottom-24 right-4 sm:right-6 z-50 w-full max-w-sm md:max-w-md bg-brand-card rounded-2xl shadow-2xl border border-slate-700/50">
+        <!-- Chat Header -->
+        <div class="p-4 bg-brand-primary/20 rounded-t-2xl flex items-center justify-between border-b border-slate-700">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center">
+                    <i class="fa-solid fa-robot text-white text-sm"></i>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm">DS Automation Assistant</p>
+                    <p class="text-xs text-brand-success flex items-center gap-1">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span> Online
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleChat()" class="text-slate-300 hover:text-white p-1">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+        
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="p-4 space-y-4">
+            <!-- Initial welcome message added via JS -->
+        </div>
+        
+        <!-- Chat Input -->
+        <div class="p-4 border-t border-slate-700">
+            <div id="loading-indicator" class="hidden text-xs text-slate-500 mb-2">
+                <i class="fa-solid fa-spinner fa-spin mr-2"></i> Thinking...
+            </div>
+            <form id="chat-form" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="Ask about automations, cost, or process..." class="w-full p-3 rounded-lg bg-slate-800 text-white placeholder-slate-500 border border-slate-700 focus:border-brand-primary focus:outline-none text-sm">
+                <button type="submit" id="send-btn" class="flex-shrink-0 w-12 h-12 bg-brand-primary hover:bg-blue-600 rounded-lg text-white transition-colors">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
 
+    <!-- Chatbot Toggle Button -->
+    <button id="chat-bubble" onclick="toggleChat()" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-primary rounded-full flex items-center justify-center text-white text-xl shadow-xl hover:bg-blue-600 transition-transform hover:scale-105">
+        <i class="fa-solid fa-comment-dots"></i>
+    </button>
+    
     <script>
+        // --- General Website JS ---
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -675,6 +749,163 @@
             // Toggle clicked FAQ
             element.classList.toggle('active');
         }
+
+        // --- AI Chatbot JS ---
+        let chatHistory = [];
+        const CHAT_MODEL = 'gemini-2.5-flash-preview-09-2025';
+        const API_KEY = ""; // Using empty API key for Canvas environment
+
+        const chatContainer = document.getElementById('chat-container');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatForm = document.getElementById('chat-form');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        const initialMessage = "Hello! I'm the DS Automations Assistant. How can I help you streamline your business or answer your questions about our Make/Zapier workflows?";
+
+        function toggleChat() {
+            chatContainer.classList.toggle('open');
+            if (chatContainer.classList.contains('open')) {
+                // Ensure initial message is there when opening
+                if (chatHistory.length === 0) {
+                    addMessage('model', initialMessage);
+                }
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatInput.focus();
+            }
+        }
+
+        function addMessage(role, text) {
+            const isUser = role === 'user';
+            
+            // Add message to chat history
+            if (role !== 'system') { // Don't track system message
+                chatHistory.push({ role: role, parts: [{ text: text }] });
+            }
+
+            const msgDiv = document.createElement('div');
+            msgDiv.className = isUser ? 'flex justify-end' : 'flex justify-start';
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = `max-w-[80%] p-3 text-sm ${isUser ? 'chat-message-user text-white' : 'chat-message-ai text-slate-200'}`;
+            contentDiv.innerText = text;
+
+            msgDiv.appendChild(contentDiv);
+            chatMessages.appendChild(msgDiv);
+            
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll
+        }
+
+        const callGeminiApi = async (messages) => {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${CHAT_MODEL}:generateContent?key=${API_KEY}`;
+            let retries = 0;
+            const MAX_RETRIES = 3;
+            let delay = 1000;
+
+            // UPDATED systemPrompt with knowledge base
+            const systemPrompt = `
+                You are a helpful and knowledgeable AI assistant for DS Automations. 
+                Your goal is to answer client questions about business automation (Zapier, Make, n8n), custom internal apps, pricing, and project process. 
+                Keep responses concise, professional, and friendly, reflecting the content of the website (FAQ, Case Studies). 
+                Encourage users to book a discovery call for specific details, like 'Ready to start? Book a discovery call via the link above!' 
+                Avoid explicitly saying you are an AI or language model, just be a helpful assistant.
+
+                **KNOWLEDGE BASE FOR QUICK REFERENCE:**
+                1.  **Business Automation:** The core service. Focuses on connecting software (CRMs, spreadsheets, marketing tools) to move data and execute tasks without human intervention. This saves time, reduces errors, and ensures consistency. It's different from full code development or RPA (Robotic Process Automation, which often mimics human desktop actions).
+                2.  **Key Automation Concepts:**
+                    * **Trigger:** The specific event that initiates a workflow (e.g., a new lead added, a payment processed, an email received).
+                    * **Action:** The task performed after the trigger or a previous step (e.g., sending a Slack message, creating a database entry).
+                    * **Scenario/Flow/Workflow:** The entire sequence of steps (Trigger + Logic + Actions) built in platforms like Make or Zapier.
+                    * **Webhooks:** A core technical concept where one app sends an instant, automated notification (payload) to another app whenever a defined event occurs. This is how we achieve real-time responses.
+                3.  **Key Business Metrics/Value:**
+                    * **ROI (Return on Investment):** The key benefit of automation. By reducing manual time (labor cost) and errors, the cost of the automation project is quickly recouped.
+                    * **SLA (Service Level Agreement):** Important for sales automations (like the 30-Sec Lead Router). It's the guaranteed response time for a critical process.
+                    * **CAC (Customer Acquisition Cost):** Automation can lower CAC by optimizing marketing data flow and ensuring quicker lead follow-up.
+                    * **LTV (Lifetime Value):** Automation can increase LTV by improving onboarding and customer service efficiency.
+            `;
+
+            const payload = {
+                contents: messages,
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            while (retries < MAX_RETRIES) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        if (response.status === 429) {
+                            throw new Error('Rate limit exceeded (429)');
+                        }
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I'm having trouble connecting right now. Please try again or book a call!";
+                    return text;
+
+                } catch (error) {
+                    retries++;
+                    if (retries >= MAX_RETRIES) {
+                        console.error('Gemini API failed after multiple retries:', error);
+                        return "I am currently unable to process your request. Please try again later.";
+                    }
+                    // Exponential backoff
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+        };
+
+
+        async function sendMessage(event) {
+            event.preventDefault();
+            const userText = chatInput.value.trim();
+
+            if (!userText) return;
+
+            // 1. Display user message
+            addMessage('user', userText);
+            chatInput.value = '';
+            chatInput.disabled = true;
+            document.getElementById('send-btn').disabled = true;
+            loadingIndicator.classList.remove('hidden');
+
+            try {
+                // 2. Call the AI
+                const aiResponse = await callGeminiApi(chatHistory);
+
+                // 3. Display AI message
+                addMessage('model', aiResponse);
+
+            } catch (error) {
+                console.error('Error during AI chat:', error);
+                addMessage('model', "Apologies, I encountered an error trying to process that. Could you try asking in a different way?");
+            } finally {
+                // 4. Reset UI
+                chatInput.disabled = false;
+                document.getElementById('send-btn').disabled = false;
+                loadingIndicator.classList.add('hidden');
+                chatInput.focus();
+            }
+        }
+        
+        // --- Initialization ---
+        window.onload = function() {
+            // Set up form submission handler
+            chatForm.addEventListener('submit', sendMessage);
+            
+            // Optional: Auto-open for demonstration, or keep closed by default
+            // toggleChat(); 
+        }
+
     </script>
 </body>
 </html>
