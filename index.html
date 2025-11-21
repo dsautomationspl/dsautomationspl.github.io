@@ -1340,9 +1340,9 @@
         </div>
     </div>
 
-    <a href="https://calendar.app.google/bSJeGhbEvWRkmpFn6" target="_blank" id="chat-bubble" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-primary rounded-full flex items-center justify-center text-white text-xl shadow-xl hover:bg-blue-600 transition-transform hover:scale-105">
+    <div onclick="toggleChat()" id="chat-bubble" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-primary rounded-full flex items-center justify-center text-white text-xl shadow-xl hover:bg-blue-600 transition-transform hover:scale-105 cursor-pointer">
         <i class="fa-solid fa-comment-dots"></i>
-    </a>
+    </div>
     
     <script>
         // --- General Website JS ---
@@ -1377,7 +1377,7 @@
         // --- AI Chatbot JS ---
         let chatHistory = [];
         const CHAT_MODEL = 'gemini-2.5-flash-preview-09-2025';
-        const API_KEY = ""; // Add your API Key here
+        const API_KEY = "AIzaSyBDqTM2lMKdT6Khz6RdJmdLwYdDt898vj0"; // Add your API Key here
 
         const chatContainer = document.getElementById('chat-container');
         const chatMessages = document.getElementById('chat-messages');
